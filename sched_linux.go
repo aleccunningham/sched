@@ -1,3 +1,4 @@
+// Package sched contains functions for set/get process scheduling parameters
 package sched
 
 import (
