@@ -34,9 +34,7 @@ func (p Policy) String() string {
 
 func (p Policy) MinPriority() int {
 	r0, _, e := syscall.RawSyscall(
-		syscall.SYS_SCHED_GET_PRIORITY_MIN,
-		uintptr(p),
-		0, 0,
+		syscall.SYS_SCHED_GET_PRIORITY_MIN, uintptr(p), 0, 0,
 	)
 	if e != 0 {
 		panic(e)
@@ -46,9 +44,7 @@ func (p Policy) MinPriority() int {
 
 func (p Policy) MaxPriority() int {
 	r0, _, e := syscall.RawSyscall(
-		syscall.SYS_SCHED_GET_PRIORITY_MAX,
-		uintptr(p),
-		0, 0,
+		syscall.SYS_SCHED_GET_PRIORITY_MAX, uintptr(p), 0, 0,
 	)
 	if e != 0 {
 		panic(e)
@@ -75,9 +71,7 @@ func SetPolicy(pid int, policy Policy, param *Param) error {
 
 func GetPolicy(pid int) (Policy, error) {
 	r0, _, e := syscall.RawSyscall(
-		syscall.SYS_SCHED_GETSCHEDULER,
-		uintptr(pid),
-		0, 0,
+		syscall.SYS_SCHED_GETSCHEDULER, uintptr(pid), 0, 0,
 	)
 	if e != 0 {
 		return 0, e
