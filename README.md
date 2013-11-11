@@ -1,1 +1,1 @@
-[documentation](http://gopkgdoc.appspot.com/pkg/github.com/ziutek/sched)
+[documentation](http://godoc.org/pkg/github.com/ziutek/sched)
